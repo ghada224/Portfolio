@@ -1,273 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Ghada Ayari, an IoT & Embedded Systems Engineer and Fullstack Developer based in Tunisia. Specializing in AI, Smart Systems, and Web Applications.">
-    <meta name="keywords" content="Ghada Ayari, IoT Engineer, Embedded Systems, Fullstack Developer, AI, React, ESP32, Tunisia, Portfolio">
-    <meta name="author" content="Ghada Ayari">
     <title>Ghada Ayari | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-    <nav id="navbar">
-        <div class="container nav-content">
-            <div class="logo">Ghada<span class="highlight">.</span></div>
+    <nav id="desktop-nav">
+        <div class="logo">Ghada Ayari</div>
+        <div>
             <ul class="nav-links">
-                <li><a href="#about" id="nav-about">About</a></li>
-                <li><a href="#skills" id="nav-skills">Skills</a></li>
-                <li><a href="#experience" id="nav-exp">Experience</a></li>
-                <li><a href="#projects" id="nav-projects">Projects</a></li>
-                <li><a href="#contact" id="nav-contact">Contact</a></li>
-                <li><button class="lang-toggle" id="lang-toggle">FR / EN</button></li>
+                <li><a href="#about" class="tr" data-tr="nav-about">About</a></li>
+                <li><a href="#work-experience" class="tr" data-tr="nav-exp">Experience</a></li>
+                <li><a href="#projects" class="tr" data-tr="nav-projects">Projects</a></li>
+                <li><a href="#contact" class="tr" data-tr="nav-contact">Contact</a></li>
+                <li><button id="lang-toggle" class="btn-lang tr" data-tr="lang-toggle">FR</button></li>
             </ul>
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="container hero-content">
-                <div class="hero-text">
-                    <span class="hero-greeting" id="hero-greeting">Hi, my name is</span>
-                    <h1>Ghada Ayari.</h1>
-                    <h2 id="hero-title">IoT & Embedded Systems Engineer | AI & Fullstack Developer</h2>
-                    <p id="hero-desc">I build intelligent embedded systems, dynamic web applications, and AI-driven
-                        solutions. From hardware to the cloud.</p>
-                    <div class="cta-buttons">
-                        <a href="assets/cv.pdf" target="_blank" class="btn btn-primary" id="btn-cv"><i
-                                class="fas fa-file-download"></i> Download CV</a>
-                        <a href="#projects" class="btn btn-outline" id="btn-projects">Check out my work!</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/Ghada-Ayari" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/Ayari-Ghada" target="_blank"><i
-                                class="fab fa-linkedin"></i></a>
-                        <a href="mailto:ayaryghada22@gmail.com"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="hero-image-container">
-                    <img src="assets/profile.jpeg" alt="Ghada Ayari" class="hero-img">
-                </div>
+    <nav id="hamburger-nav">
+        <div class="logo">Ghada Ayari</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </section>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()" class="tr" data-tr="nav-about">About</a></li>
+                <li><a href="#work-experience" onclick="toggleMenu()" class="tr" data-tr="nav-exp">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()" class="tr" data-tr="nav-projects">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()" class="tr" data-tr="nav-contact">Contact</a></li>
+                <li><button id="lang-toggle-mob" class="btn-lang tr" data-tr="lang-toggle">FR</button></li>
+            </div>
+        </div>
+    </nav>
 
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <h2 id="sec-about">About Me</h2>
-                <div class="glass" style="padding: 2rem; max-width: 800px; margin: 0 auto;">
-                    <p id="about-text" style="color: var(--text-muted); margin-bottom: 1rem;">
-                        Currently pursuing a Bachelor's degree in Computer Systems Engineering at ISIGK (2023 - 2026), I
-                        am deeply passionate about bridging the gap between hardware and software. I specialize in
-                        designing autonomous systems and intelligent dashboards.
+    <section id="hero">
+        <div class="section__pic-container">
+            <img src="assets/profile.jpeg" alt="Ghada Ayari profile picture" class="about-pic" />
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1 tr" data-tr="hero-greeting">Hello, I'm</p>
+            <h1 class="title">Ghada Ayari</h1>
+            <p class="section__text__p2 tr" data-tr="hero-title">Software Engineer | IoT & Embedded Systems</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2 tr" onclick="window.open('assets/cv.pdf')" data-tr="btn-cv">Download CV</button>
+                <button class="btn btn-color-1 tr" onclick="location.href='#contact'" data-tr="btn-contact">Contact Info</button>
+            </div>
+            <div id="socials-container">
+                <i class="fa-brands fa-linkedin icon" onclick="location.href='https://linkedin.com/in/ghada-ayari'"></i>
+                <i class="fa-brands fa-github icon" onclick="location.href='https://github.com/ghada224'"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section__text__p1 tr" data-tr="about-sub">Get To Know More</p>
+        <h1 class="title tr" data-tr="about-title">About Me</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <i class="fa-solid fa-graduation-cap icon"></i>
+                        <h3 class="tr" data-tr="edu-title">Education</h3>
+                        <p class="tr" data-tr="edu-desc">Bachelor's degree in Computer Systems Engineering<br />2023 - 2026</p>
+                    </div>
+                    <div class="details-container">
+                        <i class="fa-solid fa-certificate icon"></i>
+                        <h3 class="tr" data-tr="cert-title">Certifications</h3>
+                        <p class="tr" data-tr="cert-desc">Cisco IoT, 365DataScience, HP LIFE (x2), Google Ads Apps</p>
+                    </div>
+                    <div class="details-container">
+                        <i class="fa-solid fa-language icon" style="color: #555;"></i>
+                        <h3 class="tr" data-tr="lang-title">Languages</h3>
+                        <p class="tr" data-tr="lang-desc">Arabic (Native)<br />French & English (Professional)</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p class="tr" data-tr="about-text">
+                        Passionate IoT and Embedded Systems Engineer with a strong focus on Artificial Intelligence and Fullstack Development. I specialize in designing autonomous systems, intelligent dashboards, and bridging the gap between hardware and software to solve real-world problems.
                     </p>
-                    <ul class="skill-list"
-                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;">
-                        <li><i class="fas fa-map-marker-alt"></i> Ben Arous, Tunisia</li>
-                        <li><i class="fas fa-graduation-cap"></i> ISIGK (2023-2026)</li>
-                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="container">
-                <h2 id="sec-skills">My Skills</h2>
-                <div class="skills-container">
-                    <div class="glass skill-category">
-                        <h3 id="skill-ai"><i class="fas fa-brain"></i> AI & Data</h3>
-                        <ul class="skill-list">
-                            <li>CNN, LSTM, NLP</li>
-                            <li>Mistral 7B, Ollama</li>
-                            <li>Scikit-learn, Pandas</li>
-                            <li>Jupyter Notebook</li>
-                        </ul>
-                    </div>
-                    <div class="glass skill-category">
-                        <h3 id="skill-web"><i class="fas fa-code"></i> Web Fullstack</h3>
-                        <ul class="skill-list">
-                            <li>React.js, Tailwind CSS</li>
-                            <li>FastAPI, PHP, SQL</li>
-                            <li>Python, JavaScript</li>
-                            <li>HTML/CSS</li>
-                        </ul>
-                    </div>
-                    <div class="glass skill-category">
-                        <h3 id="skill-iot"><i class="fas fa-microchip"></i> IoT & Hardware</h3>
-                        <ul class="skill-list">
-                            <li>Raspberry Pi 5, ESP32, STM32</li>
-                            <li>VHDL, Proteus</li>
-                            <li>MQTT, I2C, SPI, UART</li>
-                            <li>TCP/HTTP</li>
-                        </ul>
-                    </div>
-                    <div class="glass skill-category">
-                        <h3 id="skill-devops"><i class="fas fa-server"></i> DevOps & Tools</h3>
-                        <ul class="skill-list">
-                            <li>Docker, AWS EC2</li>
-                            <li>Git, VMware</li>
-                            <li>Grafana</li>
-                            <li>Android Studio</li>
-                        </ul>
+    <section id="work-experience" style="height: auto; padding-bottom: 4rem;">
+        <p class="section__text__p1 tr" data-tr="work-sub">My Professional</p>
+        <h1 class="title tr" data-tr="work-title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers" style="flex-wrap: wrap; justify-content: center; max-width: 1200px; margin: 0 auto; gap: 2rem;">
+                
+                <div class="details-container" style="flex: 1; min-width: 300px; text-align: left;">
+                    <h2 class="experience-sub-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-briefcase icon" style="font-size: 1.5rem; color: #555; vertical-align: middle; margin-right: 10px;"></i> Sagemcom</h2>
+                    <h3 class="tr" data-tr="sagemcom-role" style="color: #555; margin-bottom: 1rem; font-weight: 500;">Intern - Embedded Systems</h3>
+                    <p class="tr" data-tr="sagemcom-desc" style="color: #555;">Observation of manufacturing flows and industrial tests of embedded systems. Learning industrial quality processes and hardware validation.</p>
+                </div>
+
+                <div class="details-container" style="flex: 1; min-width: 300px; text-align: left;">
+                    <h2 class="experience-sub-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-laptop-medical icon" style="font-size: 1.5rem; color: #555; vertical-align: middle; margin-right: 10px;"></i> CIMS</h2>
+                    <h3 class="tr" data-tr="cims-role" style="color: #555; margin-bottom: 1rem; font-weight: 500;">Intern</h3>
+                    <p class="tr" data-tr="cims-desc" style="color: #555;">Study of the interoperability of medical data systems and network infrastructure. Exploration of digital health systems and secure information exchange.</p>
+                </div>
+
+                <div class="details-container" style="flex: 1; min-width: 300px; text-align: left;">
+                    <h2 class="experience-sub-title" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-robot icon" style="font-size: 1.5rem; color: #555; vertical-align: middle; margin-right: 10px;"></i> ISIGK Robotics Club</h2>
+                    <h3 class="tr" data-tr="robotics-role" style="color: #555; margin-bottom: 1rem; font-weight: 500;">Active Member</h3>
+                    <p class="tr" data-tr="robotics-desc" style="color: #555;">Participation in embedded AI and robotics development projects. Collaboration on intelligent robotic systems for competitions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" style="height: auto; padding-bottom: 4rem;">
+        <p class="section__text__p1 tr" data-tr="exp-sub">Explore My</p>
+        <h1 class="title tr" data-tr="exp-title">Experience & Skills</h1>
+        <div class="experience-details-container">
+            <div class="about-containers" style="flex-wrap: wrap; justify-content: center; max-width: 1200px; margin: 0 auto;">
+                
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-web">Web Development</h2>
+                    <div class="article-container">
+                        <article><i class="fa-brands fa-html5 icon" style="color: #e34f26;"></i><div><h3>HTML</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-brands fa-css3-alt icon" style="color: #1572b6;"></i><div><h3>CSS</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-brands fa-js icon" style="color: #f7df1e;"></i><div><h3>JavaScript</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-brands fa-node icon" style="color: #339933;"></i><div><h3>NodeJS</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <div class="container">
-                <h2 id="sec-exp">Experience & Education</h2>
-                <div class="timeline">
-                    <div class="glass timeline-item">
-                        <div class="timeline-content">
-                            <span class="date" id="date-cims">Jan 2026 - Apr 2026</span>
-                            <h3 id="role-cims">Intern</h3>
-                            <h4 id="comp-cims">CIMS (Centre Informatique du Min. de la Santé)</h4>
-                            <ul id="desc-cims">
-                                <li>Study of medical data interoperability and health network infrastructures.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass timeline-item">
-                        <div class="timeline-content">
-                            <span class="date" id="date-sagem">Jul 2025 - Aug 2025</span>
-                            <h3 id="role-sagem">Intern</h3>
-                            <h4 id="comp-sagem">Sagemcom, Ezzahra</h4>
-                            <ul id="desc-sagem">
-                                <li>Industrial monitoring: manufacturing processes and testing of embedded systems.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="glass timeline-item">
-                        <div class="timeline-content">
-                            <span class="date" id="date-club">Sep 2024 - Present</span>
-                            <h3 id="role-club">Active Member</h3>
-                            <h4 id="comp-club">ISIGK Robotics Club</h4>
-                            <ul id="desc-club">
-                                <li>Development of embedded intelligence for competition robots.</li>
-                            </ul>
-                        </div>
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-mob">Mobile Development</h2>
+                    <div class="article-container">
+                        <article><i class="fa-brands fa-android icon" style="color: #3ddc84;"></i><div><h3>Android (Java)</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-mobile-screen icon" style="color: #42a5f5;"></i><div><h3>Flutter (Dart)</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container">
-                <h2 id="sec-projects">Featured Projects</h2>
-                <div class="projects-grid">
-
-
-
-                    <div class="glass project-card">
-                        <div class="project-header">
-                            <i class="far fa-folder folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/ghada224/Industrial-Monitoring-ESP32" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title" id="proj2-title">Industrial Monitoring & Predictive Maintenance</h3>
-                        <p class="project-description" id="proj2-desc">
-                            Real-time anomaly detection (vibration, gas) and alerts through an IoT dashboard using ESP32
-                            and MQTT.
-                        </p>
-                        <ul class="project-tech">
-                            <li>ESP32</li>
-                            <li>MQTT</li>
-                            <li>Grafana</li>
-                        </ul>
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-brd">Electronic Boards</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-microchip icon" style="color: #00979d;"></i><div><h3>Arduino</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-solid fa-microchip icon" style="color: #444;"></i><div><h3>ESP32</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-brands fa-raspberry-pi icon" style="color: #c51a4a;"></i><div><h3>Raspberry Pi</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
                     </div>
-
-                    <div class="glass project-card">
-                        <div class="project-header">
-                            <i class="far fa-folder folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/ghada224/IoT-Streamlit-Dashboard" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title" id="proj3-title">Intelligent IoT Dashboard</h3>
-                        <p class="project-description" id="proj3-desc">
-                            Web dashboard built with Streamlit featuring PDF/Word report exports and an integrated AI
-                            prediction module.
-                        </p>
-                        <ul class="project-tech">
-                            <li>Streamlit</li>
-                            <li>Python</li>
-                            <li>Scikit-learn</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass project-card">
-                        <div class="project-header">
-                            <i class="far fa-folder folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/ghada224/AgriTech-System" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title" id="proj4-title">AgriTech: Smart Irrigation Web & Mobile App</h3>
-                        <p class="project-description" id="proj4-desc">
-                            A complete agricultural management system with a React web dashboard and an Android mobile
-                            application.
-                        </p>
-                        <ul class="project-tech">
-                            <li>React</li>
-                            <li>Android Studio / Java</li>
-                            <li>FastAPI</li>
-                        </ul>
-                    </div>
-
-                    <div class="glass project-card">
-                        <div class="project-header">
-                            <i class="far fa-folder folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/ghada224/Smart-Traffic-Light-ESP32" target="_blank"><i
-                                        class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title" id="proj5-title">Smart Traffic Light System</h3>
-                        <p class="project-description" id="proj5-desc">
-                            Intelligent intersection management using ESP32, environmental data integration (DHT11), and
-                            LED command automation.
-                        </p>
-                        <ul class="project-tech">
-                            <li>ESP32</li>
-                            <li>C / C++</li>
-                            <li>Sensors (DHT11)</li>
-                        </ul>
-                    </div>
-
                 </div>
-            </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container contact-section">
-                <h2 id="sec-contact">Get In Touch</h2>
-                <p id="contact-text">Currently looking for new opportunities, my inbox is always open. Whether you have
-                    a question or just want to say hi, I'll try my best to get back to you!</p>
-                <a href="mailto:ayaryghada22@gmail.com" class="btn btn-outline" id="btn-hello">Say Hello</a>
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-prg">Programming Languages</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-c icon" style="color: #00599c;"></i><div><h3>C</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-c icon" style="color: #00599c;"></i><div><h3>C++</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-brands fa-python icon" style="color: #306998;"></i><div><h3>Python</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-db">Databases</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-database icon" style="color: #f29111;"></i><div><h3>SQL</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-solid fa-envira icon" style="color: #4db33d;"></i><div><h3>NoSQL (MongoDB)</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-cld">Clouds</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-cloud icon" style="color: #ffca28;"></i><div><h3>Firebase</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-lib">Libraries</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-book icon" style="color: #555;"></i><div><h3>OpenCV</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-chart-line icon" style="color: #11557c;"></i><div><h3>Matplotlib</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-calculator icon" style="color: #4d77cf;"></i><div><h3>Numpy</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-window-maximize icon" style="color: #555;"></i><div><h3>Tkinter</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-chart-pie icon" style="color: #ff6384;"></i><div><h3>Chart.js</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-os">Operating Systems</h2>
+                    <div class="article-container">
+                        <article><i class="fa-brands fa-windows icon" style="color: #0078d7;"></i><div><h3>Windows</h3><p class="tr" data-tr="lvl-exp">Experienced</p></div></article>
+                        <article><i class="fa-brands fa-ubuntu icon" style="color: #e95420;"></i><div><h3>UBUNTU</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-net">Network</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-network-wired icon" style="color: #1ba0d7;"></i><div><h3>Cisco Packet Tracer</h3><p class="tr" data-tr="lvl-bsc">Basic</p></div></article>
+                    </div>
+                </div>
+
+                <div class="details-container">
+                    <h2 class="experience-sub-title tr" data-tr="cat-des">Design</h2>
+                    <div class="article-container">
+                        <article><i class="fa-solid fa-pen-nib icon" style="color: #31a8ff;"></i><div><h3>Photoshop</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                        <article><i class="fa-solid fa-bezier-curve icon" style="color: #ff61f6;"></i><div><h3>Adobe XD</h3><p class="tr" data-tr="lvl-int">Intermediate</p></div></article>
+                    </div>
+                </div>
+
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="projects">
+        <p class="section__text__p1 tr" data-tr="proj-sub">Browse My Recent</p>
+        <h1 class="title tr" data-tr="proj-title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers project-grid">
+                <div class="details-container color-container">
+                    <div class="article-container project-pic-container">
+                        <img src="assets/medibot.png" alt="MediBot Smart Triage Robot" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=MediBot'"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">MediBot Triage Robot</h2>
+                    <p class="project-desc tr" data-tr="proj-medibot-desc">Autonomous medical triage nurse robot (PFE) equipped with AI (Random Forest, BlazeFace, Llama 3.2), IoT vital sensors, and Twilio SMS alerts.</p>
+                    <div class="project-tags">
+                        <span>Raspberry Pi 5</span><span>ESP32</span><span>React.js</span><span>FastAPI</span><span>Firebase</span><span>AI/ML</span>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ghada224/MediBot'">GitHub</button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container project-pic-container">
+                        <img src="assets/industrial.png" alt="Industrial Monitoring" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Industrial+Monitoring'"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">Industrial Monitoring</h2>
+                    <p class="project-desc tr" data-tr="proj-ind-desc">End-to-end predictive maintenance system for smart factories using ESP32, MQTT, and Grafana.</p>
+                    <div class="project-tags">
+                        <span>ESP32</span><span>MQTT</span><span>Grafana</span><span>Sensors</span>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ghada224/Industrial-Monitoring-ESP32'">GitHub</button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container project-pic-container">
+                        <img src="assets/agritech.png" alt="AgriTech System" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=AgriTech'"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">AgriTech Ecosystem</h2>
+                    <p class="project-desc tr" data-tr="proj-agri-desc">Full-stack smart agriculture ecosystem to optimize water usage. React dashboard & Android app.</p>
+                    <div class="project-tags">
+                        <span>React.js</span><span>Android (Java)</span><span>IoT</span>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ghada224/AgriTech-System'">GitHub</button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container project-pic-container">
+                        <img src="assets/streamlit.png" alt="IoT Streamlit Dashboard" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=IoT+Dashboard'"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">IoT Streamlit Dashboard</h2>
+                    <p class="project-desc tr" data-tr="proj-iot-desc">IoT monitoring dashboard built with Streamlit, integrating AI prediction modules for real-time analytics.</p>
+                    <div class="project-tags">
+                        <span>Streamlit</span><span>AI</span><span>Real-time Analytics</span><span>Python</span>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ghada224/IoT-Streamlit-Dashboard'">GitHub</button>
+                    </div>
+                </div>
+
+                <div class="details-container color-container">
+                    <div class="article-container project-pic-container">
+                        <img src="assets/traffic.png" alt="Smart Traffic Light" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Smart+Traffic'"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">Smart Traffic Light</h2>
+                    <p class="project-desc tr" data-tr="proj-traf-desc">Smart traffic management system built with ESP32 to optimize traffic flow based on real-time data.</p>
+                    <div class="project-tags">
+                        <span>ESP32</span><span>Smart City</span><span>Optimization</span>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/ghada224/Smart-Traffic-Light-ESP32'">GitHub</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <p class="section__text__p1 tr" data-tr="test-sub">What they say</p>
+        <h1 class="title tr" data-tr="test-title">Testimonials</h1>
+        <div class="experience-details-container">
+            <div class="details-container" style="max-width: 600px; margin: auto; text-align: center;">
+                <i class="fa-solid fa-quote-left icon" style="font-size: 2rem; color: #555;"></i>
+                <p style="font-size: 1.1rem; margin: 1.5rem 0;" class="tr" data-tr="test-quote">"Ghada is an exceptional engineer. Her dedication to the Robotics Club and her ability to integrate complex AI models into embedded systems is truly inspiring."</p>
+                <h3 style="font-weight: 600;">ISIGK Robotics Club</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <p class="section__text__p1 tr" data-tr="contact-sub">Get in Touch</p>
+        <h1 class="title tr" data-tr="contact-title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <i class="fa-solid fa-envelope icon contact-icon"></i>
+                <p><a href="mailto:ayaryghada22@gmail.com">ayaryghada22@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <i class="fa-brands fa-linkedin icon contact-icon"></i>
+                <p><a href="https://linkedin.com/in/ghada-ayari" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p id="footer-text">Designed & Built by Ghada Ayari</p>
-        </div>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about" class="tr" data-tr="nav-about">About</a></li>
+                    <li><a href="#work-experience" class="tr" data-tr="nav-exp">Experience</a></li>
+                    <li><a href="#projects" class="tr" data-tr="nav-projects">Projects</a></li>
+                    <li><a href="#contact" class="tr" data-tr="nav-contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright &#169; 2026 Ghada Ayari. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

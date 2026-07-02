@@ -1,176 +1,160 @@
+function toggleMenu() {
+    const menu = document.querySelector(".menu-links");
+    const icon = document.querySelector(".hamburger-icon");
+    menu.classList.toggle("open");
+    icon.classList.toggle("open");
+}
+
 const translations = {
     en: {
         "nav-about": "About",
-        "nav-skills": "Skills",
         "nav-exp": "Experience",
         "nav-projects": "Projects",
         "nav-contact": "Contact",
-        "lang-toggle": "FR / EN",
+        "lang-toggle": "FR",
         
-        "hero-greeting": "Hi, my name is",
-        "hero-title": "IoT & Embedded Systems Engineer | AI & Fullstack Developer",
-        "hero-desc": "I build intelligent embedded systems, dynamic web applications, and AI-driven solutions. From hardware to the cloud.",
-        "btn-projects": "Check out my work!",
-        "btn-contact": "Get in touch",
-        "btn-cv": "<i class=\"fas fa-file-download\"></i> Download CV",
+        "hero-greeting": "Hello, I'm",
+        "hero-title": "Software Engineer | IoT & Embedded Systems",
+        "btn-cv": "Download CV",
+        "btn-contact": "Contact Info",
         
-        "sec-about": "About Me",
-        "about-text": "Currently pursuing a Bachelor's degree in Computer Systems Engineering at ISIGK (2023 - 2026), I am deeply passionate about bridging the gap between hardware and software. I specialize in designing autonomous systems and intelligent dashboards.",
+        "about-sub": "Get To Know More",
+        "about-title": "About Me",
+        "edu-title": "Education",
+        "edu-desc": "Bachelor's degree in Computer Systems Engineering<br />ISIGK, Tunisia (2023 - 2026)",
+        "cert-title": "Certifications",
+        "cert-desc": "Cisco IoT, 365DataScience, HP LIFE (x2), Google Ads Apps",
+        "lang-title": "Languages",
+        "lang-desc": "Arabic (Native)<br />French & English (Professional)",
+        "about-text": "Graduated in Computer Systems Engineering, specializing in Software, IoT, and Embedded Systems. Passionate about developing complete intelligent systems combining backend, connected objects, real-time monitoring, and AI integration. Currently seeking a junior opportunity, internship, or work-study in Software Engineering, IoT, or Intelligent Systems.",
         
-        "sec-skills": "My Skills",
-        "skill-ai": "AI & Data",
-        "skill-web": "Web Fullstack",
-        "skill-iot": "IoT & Hardware",
-        "skill-devops": "DevOps & Tools",
+        "work-sub": "My Professional",
+        "work-title": "Experience",
+        "sagemcom-role": "Intern - Embedded Systems",
+        "sagemcom-desc": "Observation of manufacturing flows and industrial tests of embedded systems. Learning industrial quality processes and hardware validation.",
+        "cims-role": "Intern",
+        "cims-desc": "Study of the interoperability of medical data systems and network infrastructure. Exploration of digital health systems and secure information exchange.",
+        "robotics-role": "Active Member",
+        "robotics-desc": "Participation in embedded AI and robotics development projects. Collaboration on intelligent robotic systems for competitions.",
         
-        "sec-exp": "Experience & Education",
-        "date-cims": "Jan 2026 - Apr 2026",
-        "role-cims": "Intern",
-        "comp-cims": "CIMS (Centre Informatique du Min. de la Santé)",
-        "desc-cims": "<li>Study of medical data interoperability and health network infrastructures.</li>",
+        "exp-sub": "Explore My",
+        "exp-title": "Experience & Skills",
+        "cat-web": "Web Development",
+        "cat-mob": "Mobile Development",
+        "cat-brd": "Electronic Boards",
+        "cat-prg": "Programming Languages",
+        "cat-db": "Databases",
+        "cat-cld": "Clouds",
+        "cat-lib": "Libraries",
+        "cat-os": "Operating Systems",
+        "cat-net": "Network",
+        "cat-des": "Design",
+        "lvl-exp": "Experienced",
+        "lvl-int": "Intermediate",
+        "lvl-bsc": "Basic",
         
-        "date-sagem": "Jul 2025 - Aug 2025",
-        "role-sagem": "Intern",
-        "comp-sagem": "Sagemcom, Ezzahra",
-        "desc-sagem": "<li>Industrial monitoring: manufacturing processes and testing of embedded systems.</li>",
+        "proj-sub": "Browse My Recent",
+        "proj-title": "Projects",
+        "proj-ind-desc": "End-to-end predictive maintenance system for smart factories using ESP32, MQTT, and Grafana.",
+        "proj-medibot-desc": "Autonomous medical triage nurse robot (PFE) equipped with AI (Random Forest, BlazeFace, Llama 3.2), IoT vital sensors, and Twilio SMS alerts.",
+        "proj-agri-desc": "Full-stack smart agriculture ecosystem to optimize water usage. React dashboard & Android app.",
+        "proj-iot-desc": "IoT monitoring dashboard built with Streamlit, integrating AI prediction modules for real-time analytics.",
+        "proj-traf-desc": "Smart traffic management system built with ESP32 to optimize traffic flow based on real-time data.",
         
-        "date-club": "Sep 2024 - Present",
-        "role-club": "Active Member",
-        "comp-club": "ISIGK Robotics Club",
-        "desc-club": "<li>Development of embedded intelligence for competition robots.</li>",
+        "test-sub": "What they say",
+        "test-title": "Testimonials",
+        "test-quote": "\"Ghada is an exceptional engineer. Her dedication to the Robotics Club and her ability to integrate complex AI models into embedded systems is truly inspiring.\"",
         
-        "sec-projects": "Featured Projects",
-        "proj1-title": "MediBot: Intelligent Medical Assistant (PFE)",
-        "proj1-desc": "Autonomous robot for vital signs monitoring via Deep Learning (CNN/LSTM). Features intelligent voice interaction powered by a local LLM (Mistral 7B).",
-        "proj2-title": "Industrial Monitoring & Predictive Maintenance",
-        "proj2-desc": "Real-time anomaly detection (vibration, gas) and alerts through an IoT dashboard using ESP32 and MQTT.",
-        "proj3-title": "Intelligent IoT Dashboard",
-        "proj3-desc": "Web dashboard built with Streamlit featuring PDF/Word report exports and an integrated AI prediction module.",
-        "proj4-title": "AgriTech: Smart Irrigation Web & Mobile App",
-        "proj4-desc": "A complete agricultural management system with a React web dashboard and an Android mobile application.",
-        "proj5-title": "Smart Traffic Light System",
-        "proj5-desc": "Intelligent intersection management using ESP32, environmental data integration (DHT11), and LED command automation.",
-        
-        "sec-contact": "Get In Touch",
-        "contact-text": "Currently looking for new opportunities (Internship or Full-time), my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-        "btn-hello": "Say Hello",
-        "footer-text": "Designed & Built by Ghada Ayari"
+        "contact-sub": "Get in Touch",
+        "contact-title": "Contact Me"
     },
     fr: {
         "nav-about": "À Propos",
-        "nav-skills": "Compétences",
         "nav-exp": "Expérience",
         "nav-projects": "Projets",
         "nav-contact": "Contact",
-        "lang-toggle": "EN / FR",
+        "lang-toggle": "EN",
         
         "hero-greeting": "Bonjour, je suis",
-        "hero-title": "Ingénieure IoT & Systèmes Embarqués | Développeuse IA & Fullstack",
-        "hero-desc": "Je conçois des systèmes embarqués intelligents, des applications web dynamiques et des solutions basées sur l'IA. Du matériel au cloud.",
-        "btn-projects": "Voir mes projets !",
-        "btn-contact": "Me contacter",
-        "btn-cv": "<i class=\"fas fa-file-download\"></i> Télécharger le CV",
+        "hero-title": "Ingénieure Logiciel | IoT & Systèmes Embarqués",
+        "btn-cv": "Télécharger CV",
+        "btn-contact": "Contactez-moi",
         
-        "sec-about": "À Propos de Moi",
-        "about-text": "Actuellement en Licence d'Ingénierie des Systèmes Informatiques à l'ISIGK (2023 - 2026), je suis passionnée par la fusion entre le hardware et le software. Je me spécialise dans la conception de systèmes autonomes et de tableaux de bord intelligents.",
+        "about-sub": "En Savoir Plus",
+        "about-title": "À Propos de Moi",
+        "edu-title": "Éducation",
+        "edu-desc": "Licence en Ingénierie des Systèmes Informatiques<br />ISIGK, Tunisie (2023 - 2026)",
+        "cert-title": "Certifications",
+        "cert-desc": "Cisco IoT, 365DataScience, HP LIFE (x2), Google Ads Apps",
+        "lang-title": "Langues",
+        "lang-desc": "Arabe (Maternelle)<br />Français & Anglais (Professionnel)",
+        "about-text": "Diplômée en Ingénierie des Systèmes Informatiques, spécialisée en Logiciels, IoT et Systèmes Embarqués. Passionnée par le développement de systèmes intelligents complets combinant backend, objets connectés, monitoring en temps réel et intégration de l'IA. Actuellement à la recherche d'une opportunité junior, d'un stage ou d'une alternance en Ingénierie Logicielle, IoT ou Systèmes Intelligents.",
         
-        "sec-skills": "Mes Compétences",
-        "skill-ai": "IA & Données",
-        "skill-web": "Web Fullstack",
-        "skill-iot": "IoT & Hardware",
-        "skill-devops": "DevOps & Outils",
+        "work-sub": "Mon Parcours",
+        "work-title": "Expérience Professionnelle",
+        "sagemcom-role": "Stagiaire - Systèmes Embarqués",
+        "sagemcom-desc": "Observation des flux de fabrication et des tests industriels des systèmes embarqués. Apprentissage des processus de qualité industrielle et validation matérielle.",
+        "cims-role": "Stagiaire",
+        "cims-desc": "Étude de l'interopérabilité des systèmes de données médicales et de l'infrastructure réseau. Exploration des systèmes de santé numérique et de l'échange sécurisé d'informations.",
+        "robotics-role": "Membre Actif",
+        "robotics-desc": "Participation à des projets de développement en IA embarquée et robotique. Collaboration sur des systèmes robotiques intelligents pour des compétitions.",
         
-        "sec-exp": "Expériences & Formations",
-        "date-cims": "Jan 2026 - Avr 2026",
-        "role-cims": "Stagiaire",
-        "comp-cims": "CIMS (Centre Informatique du Min. de la Santé)",
-        "desc-cims": "<li>Étude de l’interopérabilité des données médicales et infrastructures réseaux de santé.</li>",
+        "exp-sub": "Découvrir Mon",
+        "exp-title": "Expérience & Compétences",
+        "cat-web": "Développement Web",
+        "cat-mob": "Développement Mobile",
+        "cat-brd": "Cartes Électroniques",
+        "cat-prg": "Langages de Programmation",
+        "cat-db": "Bases de Données",
+        "cat-cld": "Cloud",
+        "cat-lib": "Bibliothèques",
+        "cat-os": "Systèmes d'Exploitation",
+        "cat-net": "Réseaux",
+        "cat-des": "Design",
+        "lvl-exp": "Expérimenté",
+        "lvl-int": "Intermédiaire",
+        "lvl-bsc": "Basique",
         
-        "date-sagem": "Juil 2025 - Août 2025",
-        "role-sagem": "Stagiaire",
-        "comp-sagem": "Sagemcom, Ezzahra",
-        "desc-sagem": "<li>Suivi industriel : processus de fabrication et tests des systèmes embarqués.</li>",
+        "proj-sub": "Mes Récents",
+        "proj-title": "Projets",
+        "proj-ind-desc": "Système de maintenance prédictive complet pour usines intelligentes via ESP32, MQTT et Grafana.",
+        "proj-medibot-desc": "Robot infirmier autonome de triage médical (PFE) équipé d'IA (Random Forest, BlazeFace, Llama 3.2), capteurs IoT et alertes SMS Twilio.",
+        "proj-agri-desc": "Écosystème agricole full-stack pour optimiser l'irrigation. Dashboard React & Appli Android.",
+        "proj-iot-desc": "Dashboard de monitoring IoT avec Streamlit et modules de prédiction IA pour des analyses en temps réel.",
+        "proj-traf-desc": "Système intelligent de feux de signalisation basé sur ESP32 pour optimiser le flux de circulation.",
         
-        "date-club": "Sep 2024 - Présent",
-        "role-club": "Membre Actif",
-        "comp-club": "Club de Robotique ISIGK",
-        "desc-club": "<li>Développement de l’intelligence embarquée pour robots de compétition.</li>",
+        "test-sub": "Ce qu'ils disent",
+        "test-title": "Témoignages",
+        "test-quote": "\"Ghada est une ingénieure exceptionnelle. Son dévouement et sa capacité à intégrer des modèles d'IA complexes sont inspirants.\"",
         
-        "sec-projects": "Projets Phares",
-        "proj1-title": "MediBot : Robot Assistant Médical Intelligent (PFE)",
-        "proj1-desc": "Robot autonome pour le monitoring des signes vitaux via Deep Learning (CNN/LSTM). Interaction vocale intelligente basée sur le modèle Mistral 7B (Local LLM).",
-        "proj2-title": "Surveillance Industrielle – Maintenance Prédictive",
-        "proj2-desc": "Détection d’anomalies (vibration, gaz) et alertes en temps réel via dashboard IoT avec ESP32 et MQTT.",
-        "proj3-title": "Dashboard IoT Intelligent",
-        "proj3-desc": "Dashboard Web avec Streamlit, export rapports PDF/Word et module de prédiction IA intégré.",
-        "proj4-title": "AgriTech : Application Web & Mobile Agricole",
-        "proj4-desc": "Un système complet de gestion agricole avec un dashboard Web React et une application mobile Android.",
-        "proj5-title": "Système de Feux de Circulation Intelligent",
-        "proj5-desc": "Gestion intelligente d'intersections avec ESP32, intégration de données environnementales (DHT11) et automatisation.",
-        
-        "sec-contact": "Contactez-moi",
-        "contact-text": "Actuellement à la recherche de nouvelles opportunités (Stage/Alternance/Emploi). Ma boîte mail est toujours ouverte. Que vous ayez une question ou que vous vouliez juste dire bonjour, je ferai de mon mieux pour vous répondre !",
-        "btn-hello": "Dire Bonjour",
-        "footer-text": "Designé & Développé par Ghada Ayari"
+        "contact-sub": "Entrer en contact",
+        "contact-title": "Contactez-Moi"
     }
 };
 
-let currentLang = 'en'; // Default language
+let currentLang = 'en';
 
-function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'fr' : 'en';
-    
-    // Update text content
-    for (const key in translations[currentLang]) {
-        const element = document.getElementById(key);
-        if (element) {
-            // For UL elements containing LI, use innerHTML
-            if (key.startsWith('desc-')) {
-                element.innerHTML = translations[currentLang][key];
-            } else {
-                // For regular text
-                // keep icons if they exist in headers by checking if there's an i tag
-                if(element.querySelector('i')) {
-                     const iconHtml = element.querySelector('i').outerHTML;
-                     element.innerHTML = iconHtml + " " + translations[currentLang][key];
-                } else {
-                     element.textContent = translations[currentLang][key];
-                }
-            }
-        }
-    }
-    
-    // Fix specific skill headers with icons
-    const skillIcons = {
-        'skill-ai': '<i class="fas fa-brain"></i> ',
-        'skill-web': '<i class="fas fa-code"></i> ',
-        'skill-iot': '<i class="fas fa-microchip"></i> ',
-        'skill-devops': '<i class="fas fa-server"></i> '
-    };
-    
-    for (const id in skillIcons) {
-        const el = document.getElementById(id);
-        if(el) {
-            el.innerHTML = skillIcons[id] + translations[currentLang][id];
-        }
-    }
-}
-
-// Event Listeners
-document.addEventListener('DOMContentLoaded', () => {
-    // Language Toggle
-    const langBtn = document.getElementById('lang-toggle');
-    if(langBtn) {
-        langBtn.addEventListener('click', toggleLanguage);
-    }
-    
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+function applyLanguage() {
+    const elements = document.querySelectorAll('.tr');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-tr');
+        if (translations[currentLang][key]) {
+            el.innerHTML = translations[currentLang][key];
         }
     });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnDesktop = document.getElementById('lang-toggle');
+    const btnMob = document.getElementById('lang-toggle-mob');
+    
+    function handleToggle() {
+        currentLang = currentLang === 'en' ? 'fr' : 'en';
+        applyLanguage();
+    }
+    
+    if (btnDesktop) btnDesktop.addEventListener('click', handleToggle);
+    if (btnMob) btnMob.addEventListener('click', handleToggle);
+    
+    applyLanguage(); // init
 });
